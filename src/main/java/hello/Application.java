@@ -13,13 +13,16 @@ import java.text.DateFormat;
 @RestController
 public class Application {
 
-    Date date = new Date();
-    String strDateFormat = "hh:mm:ss a";
-    DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
-    String formattedDate = dateFormat.format(date);
+
 
     @RequestMapping("/")
     public String hello() {
+        
+        Date date = new Date();
+        String strDateFormat = "HH:mm:ss\n";
+        DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
+        String formattedDate = dateFormat.format(date);
+        
         return formattedDate;
     }
 
